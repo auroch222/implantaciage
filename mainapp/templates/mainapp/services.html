@@ -1,0 +1,95 @@
+{% extends "mainapp/base.html" %}
+{% block pagetitle %}{{submenu.title}}{% endblock %}
+{% block body %}
+
+  <div class="container">
+      <div class="row">
+
+
+
+      </div>
+  </div>
+
+
+ <div class="container marketing">
+  <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          {% if submenu.title %}
+              <h2 class="featurette-heading">{{submenu.title}}</span></h2>
+          {% else %}
+            <h2 class="featurette-heading"></span></h2>
+          {% endif %}
+          {% if submenu.data %}
+            <p class="lead">{{submenu.data}}</p>
+          {% else %}
+            <p class="lead"></p>
+          {% endif %}
+        </div>
+        <div class="col-md-5">
+          {% if submenu.image1 %}
+            <img src="{{submenu.image1.url}}" alt="" class="img-thumbnail" width="304" height="236"   />
+          {% endif %}
+          {% if submenu.image2 %}
+            <img src="{{submenu.image2.url}}" alt="" class="img-thumbnail" width="304" height="236" />
+          {% endif %}        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          {% if submenu.title2 %}
+              <h2 class="featurette-heading">{{submenu.title2}}</span></h2>
+          {% else %}
+            <h2 class="featurette-heading"></span></h2>
+          {% endif %}
+          {% if submenu.data2 %}
+            <p class="lead">{{submenu.data2}}</p>
+          {% else %}
+            <p class="lead"></p>
+          {% endif %}
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          {% if submenu.image3 %}
+            <img src="{{submenu.image3.url}}" alt="" class="img-thumbnail" width="304" height="236" />
+          {% endif %}
+          {% if submenu.image4 %}
+            <img src="{{submenu.image4.url}}" alt="" class="img-thumbnail" width="304" height="236" />
+          {% endif %}
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          {% if submenu.title3 %}
+              <h2 class="featurette-heading">{{submenu.title3}}</span></h2>
+          {% else %}
+            <h2 class="featurette-heading"></span></h2>
+          {% endif %}
+          {% if submenu.data3 %}
+            <p class="lead">{{submenu.data3}}</p>
+          {% else %}
+            <p class="lead"></p>
+          {% endif %}
+        </div>
+        <div class="col-md-5">
+          {% if submenu.image5 %}
+            <img src="{{submenu.image5.url}}" alt="" class="img-thumbnail" width="304" height="236" />
+          {% endif %}
+          {% if submenu.image6 %}
+            <img src="{{submenu.image6.url}}" alt="" class="img-thumbnail" width="304" height="236" />
+          {% endif %}        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+</div>
+
+
+
+
+{% endblock %}

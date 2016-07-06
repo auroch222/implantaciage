@@ -1,0 +1,22 @@
+{% extends "mainapp/base.html" %}
+{% block pagetitle %}მედ-პერსონალი{% endblock %}
+{% block body %}
+<div class="container">
+  <hr>
+  <div class="row">
+
+    <div class="col-md-6 col-sm-12">
+      <img src="{{personal.image.url}}" alt="{{personal.name}}" class="img-responsive undragable"/>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <h2 class="zeromargin">{{personal.name}}</h2>
+      <h4><b>{{personal.prof}}</b></h4>
+      <p>
+        {{personal.info}}
+      </p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

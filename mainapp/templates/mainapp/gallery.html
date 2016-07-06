@@ -1,0 +1,24 @@
+{% extends "mainapp/base.html" %}
+{% load staticfiles %}
+{% block pagetitle %}ფოტო გალერეა{% endblock %}
+
+{% block body %}
+<div class="container">
+  <hr>
+  <div class="row">
+    {% for item in gallery_images %}
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail ThumbnailHeight">
+      {% if item.image %}
+      <img src="{{item.image.url}}" alt="{{item.image_text}}" class="Responsive image">
+      <p class="ForGalleryP">{{item.image_text}}</p>
+      {% endif %}
+      <div class="caption">
+
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+{% endblock %}

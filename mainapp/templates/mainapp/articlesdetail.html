@@ -1,0 +1,67 @@
+{% extends "mainapp/base.html" %}
+{% block pagetitle %}{{articlecontext.title}}{% endblock %}
+{% load staticfiles %}
+
+{% block body %}
+ <div class="container marketing">
+   <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">{{articlecontext.title}}</h2>
+          <p class="lead">{{articlecontext.text1}}</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block undragable" src="{{articlecontext.image1.url}}" alt="Generic placeholder image">
+            <img class="featurette-image img-responsive center-block undragable MarginTop" src="{{articlecontext.image3.url}}" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">{{articlecontext.title2}}</h2>
+          <p class="lead">{{articlecontext.text2}}</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          {% if articlecontext.image5 and articlecontext.image6 %}
+          <img class="featurette-image img-responsive center-block undragable" src="{{articlecontext.image5.url}}" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block MarginTop undragable" src="{{articlecontext.image6.url}}" alt="Generic placeholder image">
+          {% endif %}
+
+
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+         <div class="row featurette">
+           <div class="col-md-7">
+             <h2 class="featurette-heading">{{articlecontext.title3}}</h2>
+             <p class="lead">{{articlecontext.text3}}</p>
+           </div>
+           <div class="col-md-5">
+             {% if articlecontext.image2 and articlecontext.image4 %}
+             <img class="featurette-image img-responsive center-block undragable" src="{{articlecontext.image2.url}}" alt="Generic placeholder image">
+             <img class="featurette-image img-responsive center-block MarginTop undragable" src="{{articlecontext.image4.url}}" alt="Generic placeholder image">
+              {% endif %}
+           </div>
+         </div>
+           <hr class="featurette-divider">
+
+           <div class="row featurette">
+             <div class="col-md-7 col-md-push-5">
+               <h2 class="featurette-heading">{{articlecontext.title4}}</h2>
+               <p class="lead">{{articlecontext.text4}}</p>
+             </div>
+             <div class="col-md-5 col-md-pull-7">
+               {% if articlecontext.image7 and articlecontext.image4 %}
+               <img class="featurette-image img-responsive center-block undragable" src="{{articlecontext.image7.url}}" alt="Generic placeholder image">
+               {% endif %}
+             </div>
+           </div>
+
+           <hr class="featurette-divider">
+  </div>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "mainapp/base.html" %}
+{% block pagetitle %}კითხვა-პასუხი{% endblock %}
+{% block body %}
+<hr>
+  <div class="container">
+    <div class="col-md-offset-3 col-sm-12 col-md-7 col-xs-12">
+      <ul>
+      {% for quest in questions  %}
+      <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{forloop.counter}}">{{quest.question}}</a>
+        </h4>
+      </div>
+      <div id="collapse{{forloop.counter}}" class="panel-collapse collapse">
+            {% if quest.answer %}
+            <div class="panel-body">{{quest.answer}}</div>
+            {% else %}
+            <div class="panel-body">გთხოვთ დაელოდოთ პასუხს</div>
+            {% endif %}
+      </div>
+    </div>
+  </div>
+
+      {% endfor %}
+    </ul>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-offset-3 col-sm-12 col-md-7 col-xs-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+
+              <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form  %}
+                  <div class="form-group">
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <span class="text-danger small">{{field.errors}}</span>
+                      </div>
+                      <label class="control-label col-sm-2">{{field.label_tag}}</label>
+                      <div class="col-sm-10">{{ field }}</div>
+                  </div>
+                {% endfor %}
+
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10 col-xs-12">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

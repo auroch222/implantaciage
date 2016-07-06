@@ -1,0 +1,22 @@
+{% extends "mainapp/base.html" %}
+{% block pagetitle %}სამუშაო საათები{% endblock %}
+{% load staticfiles %}
+
+{% block body %}
+<hr>
+<div class="container">
+<div class="row">
+<div class="panel panel-info">
+<div class="panel-heading">
+  <h3 class="panel-title">{{working_context.title}}</h3>
+</div>
+<div class="panel-body">
+  <h3>{{working_context.title2}}</h3>
+  <h4>{{working_context.title3}}</h4>
+  <h4>{{working_context.title4}}</h4>
+  <h2><b>{{working_context.text}}</b></h2>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

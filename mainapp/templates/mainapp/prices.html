@@ -1,0 +1,22 @@
+{% extends "mainapp/base.html" %}
+{% block pagetitle %}ფასები{% endblock %}
+{% load staticfiles %}
+
+{% block body %}
+<hr>
+<div class="container">
+<div class="row">
+<div class="panel panel-info">
+<div class="panel-heading">
+  <h3 class="panel-title">{{prices_context.title}}</h3>
+</div>
+<div class="panel-body">
+  <h3>{{prices_context.title}}</h3>
+  <h4>{{prices_context.text}}</h4>
+  <h4><b>{{prices_context.text2}}</b></h4>
+
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

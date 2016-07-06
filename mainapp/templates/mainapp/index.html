@@ -1,0 +1,49 @@
+{% extends "mainapp/base.html" %}
+{% load staticfiles %}
+
+ {% block body %}
+
+ <div class="container">
+
+ <hr>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+          <h4>{{main_context.text}}</h4>
+          <ul>
+            <li><b>{{main_context.title}}</b></li>
+            <li><b>{{main_context.title2}}</b></li>
+            <li><b>{{main_context.title3}}</b></li>
+            <li><b>{{main_context.title4}}</b></li>
+          </ul>
+      </div>
+
+        <div class="col-md-6 col-sm-12 col-xs-12">
+              <div id="slider">
+              <a href="#" class="control_next">></a>
+              <a href="#" class="control_prev"><</a>
+              <ul>
+                {% for img in slide %}
+                <li class="slide"><img class="img-responsive" src="{{img.slider_image.url}}" alt="{{img.slider_text}}"/></li>
+                {% endfor %}
+              </ul>
+              </div>
+
+        </div>
+
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <img src="{{main_context.image.url}}" class="img-thumbnail undragable" alt="picture" width="304" height="236">
+      </div>
+
+      <div class="col-md-6 col-sm-12 col-xs-12">
+        <h4>{{main_context.text2}}</h4>
+      </div>
+    </div>
+
+ </div>
+
+
+
+ {% endblock %}

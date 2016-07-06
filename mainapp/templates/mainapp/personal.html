@@ -1,0 +1,24 @@
+{% extends "mainapp/base.html" %}
+{% block pagetitle %}მედ-პერსონალი{% endblock %}
+{% block body %}
+<div class="container">
+  <hr>
+  <div class="row">
+    {% for persona  in persons %}
+        <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="{{persona.image.url}}" alt="...">
+          <div class="caption">
+            <h3>{{persona.name}}</h3>
+            <p>{{persona.prof}}</p>
+            <p><a href="{{persona.id}}" class="btn btn-primary" role="button">დეტალურად</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+</div>
+
+
+
+{% endblock %}
