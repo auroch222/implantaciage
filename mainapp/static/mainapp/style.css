@@ -204,3 +204,7 @@ footer p {
   float: right;
   margin-top: 7px;
 }
+
+.languageDiv a {
+  font-size: 12px;
+}
