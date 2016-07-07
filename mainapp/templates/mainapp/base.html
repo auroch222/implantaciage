@@ -69,20 +69,15 @@
                 </li>
               </ul>
                 <div class="languageDiv">
-                  <form action="{% url 'set_language' %}"  class="form-inline" role="form" method="post">{% csrf_token %}
-                    <input name="next" type="hidden" value="{{ redirect_to }}" />
-                    <select class="form-control" name="language">
-                        {% get_current_language as LANGUAGE_CODE %}
+                    {% get_current_language as LANGUAGE_CODE %}
                         {% get_available_languages as LANGUAGES %}
                         {% get_language_info_list for LANGUAGES as languages %}
                         {% for language in languages %}
-                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+                            <!--<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
                                 {{ language.name_local }} ({{ language.code }})
-                            </option>
+                            </option>-->
+                            <a href="/{{language.code}}{{ request.get_full_path|slice:'3:' }}">{{language.name_local}}</a>
                         {% endfor %}
-                    </select>
-                    <input type="submit" class="btn btn-default" value="Go" />
-                  </form>
                 </div>
             </div>
           </div>
